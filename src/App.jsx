@@ -1,16 +1,36 @@
+// App.jsx
+import { Routes, Route } from 'react-router-dom'
 
-import './App.css'
-
-import Header from './components/Header/Header'
+import CategorySection from './components/category-section'
+import FeaturedProducts from './components/featured-products'
 import Header2 from './components/Header/Header2'
+import HowToOrder from './components/how-to-order'
+import Footer from './components/premium-footer (1)'
+import Testimonials from './components/testimonials'
+import SingleProduct from './components/single-product-section'
+
 
 function App() {
-
   return (
-    <>
-    {/* <Header /> */}
-    <Header2 />
-    </>
+    <Routes>
+      {/* Home route */}
+      <Route
+        path="/"
+        element={
+          <>
+            <Header2 />
+            <FeaturedProducts />
+            <CategorySection />
+            <HowToOrder />
+            <Testimonials />
+            <Footer />
+          </>
+        }
+      />
+
+      {/* Single Product route */}
+      <Route path="/product/" element={<SingleProduct />} />
+    </Routes>
   )
 }
 
